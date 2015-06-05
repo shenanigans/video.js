@@ -32,62 +32,72 @@ import TextTrackSettings from './tracks/text-track-settings.js';
 // Require html5 tech, at least for disposing the original video tag
 import Html5 from './tech/html5.js';
 
-/**
- * An instance of the `Player` class is created when any of the Video.js setup methods are used to initialize a video.
- *
- * ```js
- * var myPlayer = videojs('example_video_1');
- * ```
- *
- * In the following example, the `data-setup` attribute tells the Video.js library to create a player instance when the library is ready.
- *
- * ```html
- * <video id="example_video_1" data-setup='{}' controls>
- *   <source src="my-source.mp4" type="video/mp4">
- * </video>
- * ```
- *
- * After an instance has been created it can be accessed globally using `Video('example_video_1')`.
- *
- * @class
- * @extends Component
- */
-class Player extends Component {
+/** @class videojs.Player
+  @root
+  @super videojs.Component
+  The master view for [videojs]() and final quantum of content display and control. The [videojs]()
+  module is itself a Function that manufactures Players.
+  ```javascript
+  var myPlayer = videojs('playerID');
+  ```
 
-  /**
-   * player's constructor function
-   *
-   * @constructs
-   * @method init
-   * @param {Element} tag        The original video tag used for configuring options
-   * @param {Object=} options    Player options
-   * @param {Function=} ready    Ready callback function
-   */
+  Players may be generated automatically from the page's html using the `data-setup` attribute. Read
+  [here](~`using the data-setup attribute`).
+  ```html
+  <video id="example_video_1" data-setup='{}' controls>
+    <source src="my-source.mp4" type="video/mp4">
+  </video>
+  ```
+
+  After an instance has been created it can be accessed globally using `Video('example_video_1')`.
+@spare `using the data-setup attribute`
+  @load `../../docs/guides/setup.md`
+@argument/Element tag
+  A `<video>` tag used to display `Html5` video when available. If the Player was [configured from
+  html](~`using the data-setup attribute`) then `tag` is the same tag that generated this Player's
+  `options`.
+@argument/.Options options
+  Player options.
+@argument/Function ready
+  Ready callback Function.
+@property/Object players
+  Every Player instance, mapped by id.
+@event play
+*/
+/** @struct Options
+  @super videojs.Component.Options
+  Configuration options for [Players](.).
+@member/Boolean controls
+  Whether to display the controls as soon as the [Player](.) is ready.
+@member/Object plugins
+  An Object mapping [plugin](videojs.plugin) names to plugin configuration Objects.
+*/
+class Player extends Component {
   constructor(tag, options, ready){
     // Make sure tag ID exists
     tag.id = tag.id || `vjs_video_${Guid.newGUID()}`;
 
-    // Set Options
-    // The options argument overrides options set in the video tag
-    // which overrides globally set options.
-    // This latter part coincides with the load order
-    // (tag must exist before Player)
     options = assign(Player.getTagSettings(tag), options);
 
-    // Delay the initialization of children because we need to set up
-    // player properties first, and can't use `this` before `super()`
+    /** @member/Boolean Options#initChildren
+      forced to `false` to delay the initialization of children until the Player's properties have
+      been set up.
+    */
     options.initChildren = false;
 
-    // Same with creating the element
+    /** @member/Boolean Options#createEl
+      Forced to `false` to delay the [initialization](#createEl) of this Player's outer [Element]
+      (#el_) until the Player's properties have been set up.
+    */
     options.createEl = false;
 
-    // we don't want the player to report touch activity on itself
-    // see enableTouchActivity in Component
+    /** @member/Boolean Options#reportTouchActivity
+      Forced to `false`.
+    */
     options.reportTouchActivity = false;
 
     // Run base component initializing with new options
     super(null, options, ready);
-
 
     // if the global option object was accidentally blown away by
     // someone, bail early with an informative error
@@ -99,13 +109,21 @@ class Player extends Component {
                       'properties you want to override?');
     }
 
+    /** @member/Element|undefined tag
+      This Player's `<video>` tag, unless it has been deleted due to a tech change.
+    */
     this.tag = tag; // Store the original tag used to set options
 
-    // Store the tag attributes used to restore html5 element
+    /** @member/NamedNodeMap tagAttributes
+      The `attribute` property of this Player's [tag property](#tag).
+    */
     this.tagAttributes = tag && Dom.getElAttributes(tag);
 
-    // Update current language
-    this.language(options.language || globalOptions.language);
+    /** @member/Object language
+      Localization map for the current environment. Affected by [this Player's options]((options)
+      and [the global options](videojs.setGlobalOptions).
+    */
+    this.language (options.language || globalOptions.language);
 
     // Update Supported Languages
     if (options['languages']) {
@@ -120,23 +138,28 @@ class Player extends Component {
       this.languages_ = globalOptions['languages'];
     }
 
-    // Cache for video property values.
+    /** @member/Object cache_
+      Cache for video property values.
+    */
     this.cache_ = {};
 
-    // Set poster
+    /** @member/String poster_
+      The URL of a poster image to display, or an empty String.
+    */
     this.poster_ = options['poster'] || '';
 
-    // Set controls
+    /** @member/Boolean controls_
+      @private
+      The original value of [options.controls](.Options#controls).
+    */
     this.controls_ = !!options['controls'];
-    // Original tag settings stored in options
-    // now remove immediately so native controls don't flash.
+
     // May be turned back on by HTML5 tech if nativeControlsForTouch is true
     tag.controls = false;
 
-    /**
-    * Store the internal state of scrubbing
-    * @private
-    * @return {Boolean} True if the user is scrubbing
+    /** @member/Boolean srubbing_
+      @private
+      Whether the user is scrubbing video right now.
     */
     this.scrubbing_ = false;
 
@@ -154,6 +177,9 @@ class Player extends Component {
     this.initChildren();
 
     // Set isAudio based on whether or not an audio tag was used
+    /** @member/Boolean isAudio
+      Set to `true` if this Player's [tag](#tag) is an `<audio>` tag.
+    */
     this.isAudio(tag.nodeName.toLowerCase() === 'audio');
 
     // Update controls className. Can't do this when the controls are initially
@@ -181,24 +207,20 @@ class Player extends Component {
     // Make player easily findable by ID
     Player.players[this.id_] = this;
 
-    // When the player is first initialized, trigger activity so components
-    // like the control bar show themselves if needed
+    /** @member/Boolean userActive_
+      @private
+      Whether the user is active right now. Set to `true` initially to get child Components like the
+      control bar to display.
+    */
     this.userActive_ = true;
     this.reportUserActivity();
     this.listenForUserActivity();
 
-    this.on('fullscreenchange', this.handleFullscreenChange);
-    this.on('stageclick', this.handleStageClick);
+    this.on ('fullscreenchange', this.handleFullscreenChange);
+    this.on ('stageclick', this.handleStageClick);
   }
 
-  /**
-   * Destroys the video player and does any necessary cleanup
-   *
-   *     myPlayer.dispose();
-   *
-   * This is especially helpful if you are dynamically adding and removing videos
-   * to/from the DOM.
-   */
+  /** @member/Function dispose */
   dispose() {
     this.trigger('dispose');
     // prevent dispose from being called twice
@@ -214,6 +236,7 @@ class Player extends Component {
     super.dispose();
   }
 
+  /** @member/Function createEl */
   createEl() {
     let el = this.el_ = super.createEl('div');
     let tag = this.tag;
@@ -274,15 +297,18 @@ class Player extends Component {
     return el;
   }
 
-  width(value) {
+  /** @member/Function width */
+  width (value) {
     return this.dimension('width', value);
   }
 
-  height(value) {
+  /** @member/Function height */
+  height (value) {
     return this.dimension('height', value);
   }
 
-  dimension(dimension, value) {
+  /** @member/Function dimension */
+  dimension (dimension, value) {
     let privDimension = dimension + '_';
 
     if (value === undefined) {
@@ -307,6 +333,13 @@ class Player extends Component {
     return this;
   }
 
+  /** @member/Function fluid
+    (De)Activate fluid layout mode.
+  @argument/Boolean activate
+    Activate or Deactivate.
+  @returns/Boolean
+    The new fluid mode activation state.
+  */
   fluid(bool) {
     if (bool === undefined) {
       return !!this.fluid_;
@@ -321,6 +354,12 @@ class Player extends Component {
     }
   }
 
+  /** @member/Function aspectRatio
+    Set the desired aspect ratio by providing a String, examplia gatia `16:10`.
+  @argument/String ratio
+    The ratio String, examplia gatia `16:10`. No decimals or dirty Strings will be parsed. The input
+    must conform exactly to `^\d+:\d+$`.
+  */
   aspectRatio(ratio) {
     if (ratio === undefined) {
       return this.aspectRatio_;
@@ -339,6 +378,10 @@ class Player extends Component {
     this.updateStyleEl_();
   }
 
+  /** @member/Function updateStyleEl_
+    Update the document stylesheet to properly style this Player. Updates two selectors -
+    `.playerId-dimensions` and `.playerId-dimensions.vjs-fluid`.
+  */
   updateStyleEl_() {
     let width;
     let height;
@@ -416,6 +459,9 @@ class Player extends Component {
       this.tag = null;
     }
 
+    /** @member/String techName
+
+    */
     this.techName = techName;
 
     // Turn off API access because we're loading a new tech that might load asynchronously

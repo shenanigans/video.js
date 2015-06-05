@@ -7,15 +7,6 @@ function isPlain(obj) {
     && obj.constructor === Object;
 }
 
-/**
- * Merge two options objects, recursively merging **only** plain object
- * properties.  Previously `deepMerge`.
- *
- * @param  {Object} object    The destination object
- * @param  {...Object} source One or more objects to merge into the first
- *
- * @returns {Object}          The updated first object
- */
 export default function mergeOptions(object={}) {
 
   // Allow for infinite additional object args to merge

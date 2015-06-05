@@ -24,20 +24,35 @@ if (typeof HTMLVideoElement === 'undefined') {
   document.createElement('track');
 }
 
-/**
- * Doubles as the main function for users to create a player instance and also
- * the main library object.
- *
- * The `videojs` function can be used to initialize or retrieve a player.
- *
- *     var myPlayer = videojs('my_video_id');
- *
- * @param  {String|Element} id      Video element or video element ID
- * @param  {Object=} options        Optional options object for config/settings
- * @param  {Function=} ready        Optional ready callback
- * @return {Player}             A player instance
- * @namespace
- */
+/** @module/Function videojs
+  @requires `setup.js`
+  @requires `component.js`
+  @requires `global-options.js`
+  @requires `player.js`
+  @requires `plugins.js`
+  @requires `utils/merge-options.js`
+  Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and
+  Flash video, as well as YouTube and Vimeo (through plugins). It supports video playback on
+  desktops and mobile devices.
+@spare details
+  The `videojs` function can be used to initialize or retrieve a [Player](.Player).
+  ```javascript
+  var myPlayer = videojs ('my_video_id');
+  ```
+@spare `README.md`
+  @load
+    ../../README.md
+@argument/String|Element id
+  Video [Element]() or video [Element]() ID.
+@argument/.Component.Options options
+  @optional
+  Options Object for configuration and plugin activation.
+@argument/Function ready
+  @optional
+  Immediately [bind a listener](.Component#ready) to the new [Player](.Player).
+@returns/.Player
+  The selected [Player](.Player), or a newly initialized one.
+*/
 var videojs = function(id, options, ready){
   var tag; // Element of ID
 
@@ -88,32 +103,27 @@ var videojs = function(id, options, ready){
 // You have to wait at least once in case this script is loaded after your video in the DOM (weird behavior only with minified version)
 setup.autoSetupTimeout(1, videojs);
 
-/**
- * Current software version (semver)
- * @type {String}
- */
+/** @property/String VERSION
+  Current software version, in [semver](https://github.com/npm/node-semver) format.
+*/
 videojs['VERSION'] = '__VERSION__';
 
-/**
- * Get the global options object
- *
- * @returns {Object} The global options object
- */
+/** @property/Function getGlobalOptions
+  Get the global options object
+@returns/.Component.Options
+  The global options Object.
+*/
 videojs.getGlobalOptions = () => globalOptions;
 
-/**
- * Set options that will apply to every player
- *
- *     videojs.setGlobalOptions({
- *       autoplay: true
- *     });
- *     // -> all players will autoplay by default
- *
- * NOTE: This will do a deep merge with the new options,
- * not overwrite the entire global options object.
- *
- * @returns {Object} The updated global options object
- */
+/** @property/Function setGlobalOptions
+  Set options that will apply to every player. Not that this will do a [deep merge]
+  (.mergeOptions) with the new options, not overwrite the entire global options Object.
+@argument/.Component.Options newOptions
+  New configuration options to be [recursively merged](.mergeOptions) into the global configuration.
+  All active [Components](.Component) will be updated.
+@returns/.Component.Options
+  The updated global options Object.
+*/
 videojs.setGlobalOptions = function(newOptions) {
   return mergeOptions(globalOptions, newOptions);
 };
@@ -127,190 +137,169 @@ if (MINOR_VERSION !== '__VERSION_'+'NO_PATCH__') {
   globalOptions['flash']['swf'] = `${ACCESS_PROTOCOL}vjs.zencdn.net/${MINOR_VERSION}/video-js.swf`;
 }
 
-/**
- * Get an object with the currently created players, keyed by player ID
- *
- * @returns {Object} The created players
- */
+/** @property/Function getPlayers
+  Get an object with the currently created players, keyed by player ID
+@returns/Object
+  The created [Players](.Player).
+*/
 videojs.getPlayers = function() {
   return Player.players;
 };
 
-/**
- * Get a component class object by name
- *
- *     var VjsButton = videojs.getComponent('Button');
- *
- *     // Create a new instance of the component
- *     var myButton = new VjsButton(myPlayer);
- *
- */
+/** @property/Function getComponent
+  Get a component class Object by name.
+@argument/String name
+  The class name to retrieve.
+@returns/Function|undefined
+  The [Component](.Component) class constructor [registered](.registerComponent) to the provided
+  name.
+*/
 videojs.getComponent = Component.getComponent;
 
-/**
- * Register a component so it can referred to by name
- *
- * Used when adding to other
- * components, either through addChild
- * `component.addChild('myComponent')`
- * or through default children options
- * `{ children: ['myComponent'] }`.
- *
- *     // Get a component to subclass
- *     var VjsButton = videojs.getComponent('Button');
- *
- *     // Subclass the component (see 'extends' doc for more info)
- *     var MySpecialButton = videojs.extends(VjsButton, {});
- *
- *     // Register the new component
- *     VjsButton.registerComponent('MySepcialButton', MySepcialButton);
- *
- *     // (optionally) add the new component as a default player child
- *     myPlayer.addChild('MySepcialButton');
- *
- * NOTE: You could also just initialize the component before adding.
- * `component.addChild(new MyComponent());`
- *
- * @param {String} The class name of the component
- * @param {Component} The component class
- * @returns {Component} The newly registered component
- */
+/** @property/Function registerComponent
+  Register a component so it can referred to by name.
+@argument/String name
+  The class name of the new Component.
+@argument/Function component
+  The component class constructor to register.
+@returns/Function
+  The newly registered [Component](.Component) constructor is returned.
+*/
 videojs.registerComponent = Component.registerComponent;
 
-/**
- * A suite of browser and device tests
- * @type {Object}
- */
+// documented in utils/Browser
 videojs.browser = browser;
 
-/**
- * Subclass an existing class
- * Mimics ES6 subclassing with the `extends` keyword
- *
- *     // Create a basic javascript 'class'
- *     function MyClass(name){
- *       // Set a property at initialization
- *       this.myName = name;
- *     }
- *
- *     // Create an instance method
- *     MyClass.prototype.sayMyName = function(){
- *       alert(this.myName);
- *     };
- *
- *     // Subclass the exisitng class and change the name
- *     // when initializing
- *     var MySubClass = videojs.extends(MyClass, {
- *       constructor: function(name) {
- *         // Call the super class constructor for the subclass
- *         MyClass.call(this, name)
- *       }
- *     });
- *
- *     // Create an instance of the new sub class
- *     var myInstance = new MySubClass('John');
- *     myInstance.sayMyName(); // -> should alert "John"
- *
- * @param {Function} The Class to subclass
- * @param {Object} An object including instace methods for the new class
- *                   Optionally including a `constructor` function
- *
- * @returns {Function} The newly created subclass
- */
+/** @property/Function extends
+  Subclass an existing class. Mimics ES6 subclassing with the `extends` keyword. For example:
+  ```javascript
+  // Create a basic javascript 'class'
+  function Human (name){
+    this.name = name;
+  }
+
+  // Create an instance method
+  Human.prototype.getName = function(){
+    alert(this.name);
+  };
+
+  // Subclass the existing class and change the name
+  var JonesFamilyMember = videojs.extends (Human, {
+    constructor: function(name) {
+      Human.call (this, name + ' Jones');
+    }
+  });
+
+  // Create an instance of the new sub class
+  var johnJones = new JonesFamilyMember ('John');
+  myInstance.getName(); // "John Jones"
+  ```
+@argument/Function
+  The Class to extend.
+@argument/Object
+  An object including instace methods for the new class. If the property `constructor` is found it
+  is used as the class' constructor Function.
+@returns/function
+  A new subclass constructor.
+*/
 videojs.extends = extendsFn;
 
-/**
- * Merge two options objects recursively
- * Performs a deep merge like lodash.merge but **only merges plain objects**
- * (not arrays, elements, anything else)
- * Other values will be copied directly from the second object.
- *
- *     var defaultOptions = {
- *       foo: true,
- *       bar: {
- *         a: true,
- *         b: [1,2,3]
- *       }
- *     };
- *     var newOptions = {
- *       foo: false,
- *       bar: {
- *         b: [4,5,6]
- *       }
- *     };
- *
- *     var result = videojs.mergeOptions(defaultOptions, newOptions);
- *     // result.foo = false;
- *     // result.bar.a = true;
- *     // result.bar.b = [4,5,6];
- *
- * @param {Object} The options object whose values will be overriden
- * @param {Object} The options object with values to override the first
- * @param {Object} Any number of additional options objects
- *
- * @returns {Object} a new object with the merged values
- */
+/** @property/Function mergeOptions
+  Destructively merge options Objects, recursing through plain Objects and overwriting all other
+  types. For example:
+  ```javascript
+  var defaultOptions = {
+    foo: true,
+    bar: {
+      a: true,
+      b: [ 1, 2, 3 ]
+    }
+  };
+  var newOptions = {
+    foo: false,
+    bar: {
+      b: [ 4 ]
+    }
+  };
+  videojs.mergeOptions (defaultOptions, newOptions);
+  // defaultOptions.foo = false;
+  // defaultOptions.bar.a = true;
+  // defaultOptions.bar.b = [ 4 ];
+  ```
+@argument/.Component.Options target
+  The options Object which will be filled/overwritten by `source`.
+@args/.Component.Options source
+  Any number of options Objects to be merged into `target`. Merge operations are processed
+  individually in forward order.
+@returns/Object
+  Returns the `target` Object.
+*/
 videojs.mergeOptions = mergeOptions;
 
-/**
- * Create a Video.js player plugin
- *
- * Plugins are only initialized when options for the plugin are included
- * in the player options, or the plugin function on the player instance is
- * called.
- *
- * **See the plugin guide in the docs for a more detailed example**
- *
- *     // Make a plugin that alerts when the player plays
- *     videojs.plugin('myPlugin', function(myPluginOptions) {
- *       myPluginOptions = myPluginOptions || {};
- *
- *       var player = this;
- *       var alertText = myPluginOptions.text || 'Player is playing!'
- *
- *       player.on('play', function(){
- *         alert(alertText);
- *       });
- *     });
- *
- *     // USAGE EXAMPLES
- *
- *     // EXAMPLE 1: New player with plugin options, call plugin immediately
- *     var player1 = videojs('idOne', {
- *       myPlugin: {
- *         text: 'Custom text!'
- *       }
- *     });
- *     // Click play
- *     // --> Should alert 'Custom text!'
- *
- *     // EXAMPLE 3: New player, initialize plugin later
- *     var player3 = videojs('idThree');
- *     // Click play
- *     // --> NO ALERT
- *     // Click pause
- *     // Initialize plugin using the plugin function on the player instance
- *     player3.myPlugin({
- *       text: 'Plugin added later!'
- *     });
- *     // Click play
- *     // --> Should alert 'Plugin added later!'
- *
- * @param {String} The plugin name
- * @param {Function} The plugin function that will be called with options
- */
+/** @property/Function plugin
+  Register a Video.js [Player](.Player) Plugin to be activated on new and current [Player](.Player)
+  instances. The plugin will only be activated when an option is found in the either [Component's
+  config](.Component(options) or the [global config.](.setGlobalOptions)
+
+  Some simple examples:
+  ```javascript
+  // register a plugin that alerts when the player starts playing
+  videojs.plugin ('myPlugin', function (options) {
+    options = options || {};
+    var alertText = options.text || 'Player is playing!'
+    this.on('play', function(){
+      alert (alertText);
+    });
+  });
+
+  // New player with plugin options pre-configured
+  var playerOne = videojs ('idOne', {
+    myPlugin: {
+      text: 'Custom text!'
+    }
+  });
+
+  // New player with plugin options configured later
+  var playerTwo = videojs ('idOne');
+  playerTwo.myPlugin ({ text:'Custom text!' });
+
+  // New player with a late-registered plugin
+  var playerThree = videojs ('idThree', {
+    pluginTwo: {
+      text: 'Pause text!'
+    }
+  });
+  videojs.plugin ('pluginTwo', function (options) {
+    options = options || {};
+    var alertText = options.text || 'Player is paused!'
+    this.on('pause', function(){
+      alert (alertText);
+    });
+  });
+  ```
+@spare `authoring plugins`
+  @load `../../docs/guides/plugins.md`
+@argument/String
+  The new plugin's name.
+@argument/Function
+  The plugin Function that will be called with the plugin's [configured options]
+  (.Component(options).
+*/
+// shouldn't it be registerPlugin, to match registerComponent?
 videojs.plugin = plugin;
 
-/**
- * Adding languages so that they're available to all players.
- *
- *     videojs.addLanguage('es', { 'Hello': 'Hola' });
- *
- * @param  {String} code The language code or dictionary property
- * @param  {Object} data The data values to be translated
- *
- * @return {Object} The resulting language dictionary object
- */
+/** @property/Function addLanguage
+  Adding languages so that they're available to all players.
+```javascript
+videojs.addLanguage('es', { 'Hello': 'Hola' });
+```
+@argument/String code
+  The language code or dictionary property.
+@argument/Object data
+  The data values to be translated.
+@returns/Object
+  The resulting language dictionary Object.
+*/
 videojs.addLanguage = function(code, data){
   code = ('' + code).toLowerCase();
   return merge(globalOptions.languages, { [code]: data })[code];

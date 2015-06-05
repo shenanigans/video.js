@@ -5,15 +5,14 @@ import * as Fn from './utils/fn.js';
 import document from 'global/document';
 import assign from 'object.assign';
 
-/* Button - Base class for all buttons
-================================================================================ */
-/**
- * Base class for all buttons
- * @param {Player|Object} player
- * @param {Object=} options
- * @class
- * @constructor
- */
+/** @class videojs.Button
+  @root
+  @super videojs.Component
+  Base class for all buttons
+@argument/Player|Object player
+@argument/Object options
+  @optional
+*/
 class Button extends Component {
 
   constructor(player, options) {
@@ -27,6 +26,17 @@ class Button extends Component {
     this.on('blur', this.handleBlur);
   }
 
+  /** @member/Function createEl
+    Create the component's DOM element
+  @argument/String type
+    @optional
+    @default `"button"`
+    Element's node type. e.g. 'div'
+  @argument/Object props
+    @optional
+    An object of element attributes that should be set on the element Tag name.
+  @returns/Element
+  */
   createEl(type='button', props={}) {
     // Add standard Aria and Tabindex info
     props = assign({
@@ -58,19 +68,32 @@ class Button extends Component {
     return this;
   }
 
+  /** @member/Function buildCSSClass
+    Override point. Allows subclasses to stack CSS class names. The base class returns an empty
+    String.
+  @returns/String
+  */
   buildCSSClass() {
     return `vjs-control vjs-button ${super.buildCSSClass()}`;
   }
 
-  // Click - Override with specific functionality for button
+  /** @member/Function handleClick
+    Override point. Allows subclasses to define a click handler Function. The base method is a no-op
+    so there's no need to call it.
+  */
   handleClick() {}
 
-  // Focus - Add keyboard functionality to element
+  /** @member/Function handleFocus
+    Override point. Allows subclasses to define a focus handler Function. **Always call the base
+    method.**
+  */
   handleFocus() {
     Events.on(document, 'keydown', Fn.bind(this, this.handleKeyPress));
   }
 
-  // KeyPress (document level) - Trigger click when keys are pressed
+  /** @member/Function handleKeyPress
+    Trigger click when keys are pressed.
+  */
   handleKeyPress(event) {
     // Check for space bar (32) or enter (13) keys
     if (event.which === 32 || event.which === 13) {
@@ -79,7 +102,10 @@ class Button extends Component {
     }
   }
 
-  // Blur - Remove keyboard triggers
+  /** @member/Function handleBlur
+    Override point. Allows subclasses to define a focus handler Function. **Always call the base
+    method.**
+  */
   handleBlur() {
     Events.off(document, 'keydown', Fn.bind(this, this.handleKeyPress));
   }
