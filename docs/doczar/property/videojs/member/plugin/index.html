@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs#plugin documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../index.js"></script>
+</head>
+<body class="member" id="component_655">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../index.html">member</a>
+            <span>
+                <a class="valtype" href="../../../../property/Function/index.html">Function</a>
+                
+                <span class="valsep">|</span>
+            </span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">#</span><a href="index.html" class="breadcrumb member">plugin</a>
+            </span>
+        </div>
+<div id="TOC">
+    <!--<h3>Table of Contents</h3>-->
+            <div class="section">
+                <h4 class="header"><a href="#arguments">Arguments</a></h4>
+                    <a href="#component_649"></a><br />
+                    <a href="#component_652"></a><br />
+            </div>
+</div>
+        <div id="content">
+                <h1 class="signature">
+                    plugin (
+<div class="argument">
+    
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="title" href="#component_649">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+<div class="argument">
+    
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="../../../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="title" href="#component_652">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+                    ) {
+                </h1>
+            <!-- basic document info -->
+            <div id="details">
+                        <div class="markdown"><p>Register a Video.js <a href="../../property/Player/index.html"><code>Player</code></a> Plugin to be activated on new and current <a href="../../property/Player/index.html"><code>Player</code></a>
+instances. The plugin will only be activated when an option is found in the either <a href="../../property/Component/index.html#component_587"><code>Component&#39;s
+config</code></a> or the <a href="../../property/setGlobalOptions/index.html"><code>global config.</code></a></p>
+<p>Some simple examples:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// register a plugin that alerts when the player starts playing</span>
+videojs.plugin (<span class="hljs-string">'myPlugin'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(options)</span> </span>{
+  options = options || {};
+  <span class="hljs-keyword">var</span> alertText = options.text || <span class="hljs-string">'Player is playing!'</span>
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'play'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    alert (alertText);
+  });
+});
+
+<span class="hljs-comment">// New player with plugin options pre-configured</span>
+<span class="hljs-keyword">var</span> playerOne = videojs (<span class="hljs-string">'idOne'</span>, {
+  myPlugin: {
+    text: <span class="hljs-string">'Custom text!'</span>
+  }
+});
+
+<span class="hljs-comment">// New player with plugin options configured later</span>
+<span class="hljs-keyword">var</span> playerTwo = videojs (<span class="hljs-string">'idOne'</span>);
+playerTwo.myPlugin ({ text:<span class="hljs-string">'Custom text!'</span> });
+
+<span class="hljs-comment">// New player with a late-registered plugin</span>
+<span class="hljs-keyword">var</span> playerThree = videojs (<span class="hljs-string">'idThree'</span>, {
+  pluginTwo: {
+    text: <span class="hljs-string">'Pause text!'</span>
+  }
+});
+videojs.plugin (<span class="hljs-string">'pluginTwo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(options)</span> </span>{
+  options = options || {};
+  <span class="hljs-keyword">var</span> alertText = options.text || <span class="hljs-string">'Player is paused!'</span>
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'pause'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    alert (alertText);
+  });
+});
+</code></pre>
+</div>
+                <div class="clear"></div>
+                    <!-- extra document info -->
+                    <h1>Additional Documentation Pages</h1>
+                    <div id="spares" class="section spares">
+                            <a class="spare" id="component_646" href="spare/authoring plugins/index.html">authoring plugins</a>
+                            <br />
+                    </div>
+            </div>
+<div class="children">
+            <h2>Arguments</h2>
+            <div class="section arguments">
+                    <div class="child argument" id="component_649">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="index.html#component_649">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The new plugin&#39;s name.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument" id="component_652">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="name" href="index.html#component_652">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The plugin Function that will be called with the plugin&#39;s <a href="../../property/Component/index.html#component_587"><code>configured options</code></a>.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">1:13am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

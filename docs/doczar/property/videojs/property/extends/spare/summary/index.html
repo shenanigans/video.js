@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.extends~summary documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_234">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="../../index.html" class="breadcrumb property">extends</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">summary</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><p>Subclass an existing class. Mimics ES6 subclassing with the <code>extends</code> keyword. For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Create a basic javascript 'class'</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Human</span> <span class="hljs-params">(name)</span></span>{
+  <span class="hljs-keyword">this</span>.name = name;
+}
+
+<span class="hljs-comment">// Create an instance method</span>
+Human.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  alert(<span class="hljs-keyword">this</span>.name);
+};
+
+<span class="hljs-comment">// Subclass the existing class and change the name</span>
+<span class="hljs-keyword">var</span> JonesFamilyMember = videojs.extends (Human, {
+  constructor: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(name)</span> </span>{
+    Human.call (<span class="hljs-keyword">this</span>, name + <span class="hljs-string">' Jones'</span>);
+  }
+});
+
+<span class="hljs-comment">// Create an instance of the new sub class</span>
+<span class="hljs-keyword">var</span> johnJones = <span class="hljs-keyword">new</span> JonesFamilyMember (<span class="hljs-string">'John'</span>);
+myInstance.getName(); <span class="hljs-comment">// "John Jones"</span>
+</code></pre>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

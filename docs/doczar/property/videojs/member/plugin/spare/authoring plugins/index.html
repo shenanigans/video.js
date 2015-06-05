@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs#plugin~authoring plugins documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_646">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">#</span><a href="../../index.html" class="breadcrumb member">plugin</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">authoring plugins</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><h1 id="plugins">Plugins</h1>
+<p>If you&#39;ve built something cool with Video.js, you can easily share it with the rest of the world by creating a plugin. Although, you can roll your own, you can also use <a href="https://github.com/dmlap/generator-videojs-plugin">generator-videojs-plugin</a>, a <a href="http://yeoman.io">Yeoman</a> generator that provides scaffolding for video.js plugins including:</p>
+<ul>
+<li><a href="http://gruntjs.com">Grunt</a> for build management</li>
+<li><a href="https://www.npmjs.org">npm</a> for dependency management</li>
+<li><a href="http://qunitjs.com">QUnit</a> for testing</li>
+</ul>
+<h2 id="step-1-write-some-javascript">Step 1: Write Some Javascript</h2>
+<p>You may have already done this step. Code up something interesting and then wrap it in a function. At the most basic level, that&#39;s all a video.js plugin is. By convention, plugins take a hash of options as their first argument:</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">examplePlugin</span><span class="hljs-params">(options)</span> </span>{
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'play'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'playback has started!'</span>);
+  });
+};
+</code></pre><p>When it&#39;s activated, <code>this</code> will be the Video.js player your plugin is attached to. You can use anything you&#39;d like in the <a href="javascript:return false;"><code>Video.js API</code></a> when you&#39;re writing a plugin: change the <code>src</code>, mess up the DOM, or listen for and emit your own events.</p>
+<h2 id="step-2-registering-a-plugin">Step 2: Registering A Plugin</h2>
+<p>It&#39;s time to give the rest of the world the opportunity to be awed by your genius. When your plugin is loaded, it needs to let Video.js know this amazing new functionality is now available:</p>
+<pre><code><span class="hljs-attribute">videojs</span>.<span class="hljs-function">plugin</span>(<span class="hljs-string">'examplePlugin'</span>, examplePlugin);
+</code></pre><p>From this point on, your plugin will be added to the Video.js prototype and will show up as a property on every instance created. Make sure you choose a unique name that doesn&#39;t clash with any of the properties already in Video.js. Which leads us to...</p>
+<h2 id="step-3-using-a-plugin">Step 3: Using A Plugin</h2>
+<p>There are two ways to initialize a plugin. If you&#39;re creating your video tag dynamically, you can specify the plugins you&#39;d like to initialize with it and any options you want to pass to them:</p>
+<pre><code><span class="hljs-attribute">videojs</span>(<span class="hljs-string">'vidId'</span>, {
+  <span class="hljs-attribute">plugins</span>: {
+    <span class="hljs-attribute">examplePlugin</span>: {
+      <span class="hljs-attribute">exampleOption</span>: true
+    }
+  }
+});
+</code></pre><p>If you&#39;ve already initialized your video tag, you can activate a plugin at any time by calling its setup function directly:</p>
+<pre><code><span class="hljs-keyword">var</span> video = videojs(<span class="hljs-string">'cool-vid'</span>);
+video.examplePlugin({ exampleOption: <span class="hljs-literal">true</span> });
+</code></pre><p>That&#39;s it. Head on over to the <a href="https://github.com/videojs/video.js/wiki/Plugins">Video.js wiki</a> and add your plugin to the list so everyone else can check it out.</p>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">1:13am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

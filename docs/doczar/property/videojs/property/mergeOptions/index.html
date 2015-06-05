@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.mergeOptions documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../index.js"></script>
+</head>
+<body class="property" id="component_248">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../index.html">property</a>
+            <span>
+                <a class="valtype" href="../../../../property/Function/index.html">Function</a>
+                
+                <span class="valsep">|</span>
+            </span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="index.html" class="breadcrumb property">mergeOptions</a>
+            </span>
+        </div>
+<div id="TOC">
+    <!--<h3>Table of Contents</h3>-->
+            <div class="section">
+                <h4 class="header"><a href="#arguments">Arguments</a></h4>
+                    <a href="#component_239">target</a><br />
+                    <a href="#component_242">source</a><br />
+            </div>
+</div>
+        <div id="content">
+                <h1 class="signature">
+                        <span>
+                            <span class="valsep">,</span>
+                            <span class="types">
+                                <span class="valsep punctuation">|</span>
+                                <a class="valtype" href="../../../../property/Object/index.html">Object</a>
+                            </span>
+                        </span>
+                    mergeOptions (
+<div class="argument">
+    
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="../../property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="title" href="#component_239">
+            target
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+<div class="argument">
+    
+    <span class="punctuation">...</span>
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="../../property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="title" href="#component_242">
+            source
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+                    ) {
+                </h1>
+            <!-- basic document info -->
+            <div id="details">
+                        <div class="markdown"><p>Destructively merge options Objects, recursing through plain Objects and overwriting all other
+types. For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> defaultOptions = {
+  foo: <span class="hljs-literal">true</span>,
+  bar: {
+    a: <span class="hljs-literal">true</span>,
+    b: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]
+  }
+};
+<span class="hljs-keyword">var</span> newOptions = {
+  foo: <span class="hljs-literal">false</span>,
+  bar: {
+    b: [ <span class="hljs-number">4</span> ]
+  }
+};
+videojs.mergeOptions (defaultOptions, newOptions);
+<span class="hljs-comment">// defaultOptions.foo = false;</span>
+<span class="hljs-comment">// defaultOptions.bar.a = true;</span>
+<span class="hljs-comment">// defaultOptions.bar.b = [ 4 ];</span>
+</code></pre>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+            <h2>Arguments</h2>
+            <div class="section arguments">
+                    <div class="child argument" id="component_239">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="index.html#component_239">
+            target
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The options Object which will be filled/overwritten by <code>source</code>.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument" id="component_242">
+<span class="signature">
+    <span class="punctuation">...</span>
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="index.html#component_242">
+            source
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Any number of options Objects to be merged into <code>target</code>. Merge operations are processed
+individually in forward order.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+            <!-- return values -->
+            <h1 class="header">Return Values</h1>
+            <div id="returns" class="section returns">
+<div id="component_245" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="../../../../property/Object/index.html">Object</a>
+            
+        </span>
+        
+        <a class="title" href="index.html#component_245"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Returns the <code>target</code> Object.</p>
+</span>
+    </div>
+</div>
+            </div>
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

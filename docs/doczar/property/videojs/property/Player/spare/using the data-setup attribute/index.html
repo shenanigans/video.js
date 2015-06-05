@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.Player~using the data-setup attribute documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_598">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="../../index.html" class="breadcrumb class">Player</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">using the data-setup attribute</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><h1 id="setup">Setup</h1>
+<p>Video.js is pretty easy to set up. It can take a matter of seconds to get the player up and working on your web page.</p>
+<h2 id="step-1-include-the-video-js-javascript-and-css-files-in-the-head-of-your-page-">Step 1: Include the Video.js Javascript and CSS files in the head of your page.</h2>
+<p>You can download the Video.js source and host it on your own servers, or use the free CDN hosted version. It&#39;s often recommended now to put JavaScript before the end body tag (&lt;/body&gt;) instead of the head (&lt;head&gt;), but Video.js includes an &#39;HTML5 Shiv&#39;, which needs to be in the head for older IE versions to respect the video tag as a valid element.</p>
+<blockquote>
+<p>NOTE: If you&#39;re already using an HTML5 shiv like <a href="http://modernizr.com/">Modernizr</a> you can include the Video.js JavaScript anywhere, however make sure your version of Modernizr includes the shiv for video.</p>
+<p>If you&#39;re not using something like Modernizr but still want to include Video.JS before the closing body tag, you can add your own shiv. Include this in the head of your document:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'video'</span>);<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'audio'</span>);<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'track'</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+</blockquote>
+<h3 id="cdn-version">CDN Version</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//vjs.zencdn.net/4.12/video-js.min.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//vjs.zencdn.net/4.12/video.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="install-via-package-manager">Install via package manager</h2>
+<h3 id="npm">NPM</h3>
+<pre><code>$ npm <span class="hljs-operator"><span class="hljs-keyword">install</span> <span class="hljs-comment">--save video.js</span></span>
+</code></pre><h3 id="bower">Bower</h3>
+<pre><code>$ bower <span class="hljs-operator"><span class="hljs-keyword">install</span> <span class="hljs-comment">--save video.js</span></span>
+</code></pre><h3 id="self-hosted-">Self Hosted.</h3>
+<p>To entirely self-host, you&#39;ll need to pull in the font files and let Video.js know where the swf is located. If you simply copy the dist folder or zip file contents into your project everything
+should Just Work™, but the paths can easily be changed by editing the LESS file and re-building, or by modifying the generated CSS file.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//example.com/path/to/video-js.min.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//example.com/path/to/video.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  videojs.options.flash.swf = <span class="hljs-string">"http://example.com/path/to/video-js.swf"</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="step-2-add-an-html5-video-tag-to-your-page-">Step 2: Add an HTML5 video tag to your page.</h2>
+<p>With Video.js you just use an HTML5 video tag to embed a video. Video.js will then read the tag and make it work in all browsers, not just ones that support HTML5 video. Beyond the basic markup, Video.js needs a few extra pieces.</p>
+<blockquote>
+<p>Note: The <code>data-setup</code> attribute described here should not be used if you use the alternative setup described in the next section.</p>
+</blockquote>
+<ol>
+<li><p>The &#39;data-setup&#39; Attribute tells Video.js to automatically set up the video when the page is ready, and read any options (in JSON format) from the attribute (see <a href="javascript:return false;"><code>options</code></a>). There are other methods for initializing the player, but this is the easiest.</p>
+</li>
+<li><p>The &#39;id&#39; Attribute: Should be used and unique for every video on the same page.</p>
+</li>
+<li><p>The &#39;class&#39; attribute contains two classes:</p>
+<ul>
+<li><code>video-js</code> applies styles that are required for Video.js functionality, like fullscreen and subtitles.</li>
+<li><code>vjs-default-skin</code> applies the default skin to the HTML controls, and can be removed or overridden to create your own controls design.</li>
+</ul>
+</li>
+</ol>
+<p>Otherwise include/exclude attributes, settings, sources, and tracks exactly as you would for HTML5 video.*</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"example_video_1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"video-js vjs-default-skin"</span>
+  <span class="hljs-attribute">controls</span> <span class="hljs-attribute">preload</span>=<span class="hljs-value">"auto"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"640"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"264"</span>
+  <span class="hljs-attribute">poster</span>=<span class="hljs-value">"http://video-js.zencoder.com/oceans-clip.png"</span>
+  <span class="hljs-attribute">data-setup</span>=<span class="hljs-value">'{"example_option":true}'</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://video-js.zencoder.com/oceans-clip.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'video/mp4'</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://video-js.zencoder.com/oceans-clip.webm"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'video/webm'</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://video-js.zencoder.com/oceans-clip.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'video/ogg'</span> /&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"vjs-no-js"</span>&gt;</span>To view this video please enable JavaScript, and consider upgrading to a web browser that <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://videojs.com/html5-video-support/"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>supports HTML5 video<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<p>By default, the big play button is located in the upper left hand corner so it doesn&#39;t cover up the interesting parts of the poster. If you&#39;d prefer to center the big play button, you can add an additional <code>vjs-big-play-centered</code> class to your video element. For example:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"example_video_1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"video-js vjs-default-skin vjs-big-play-centered"</span>
+  <span class="hljs-attribute">controls</span> <span class="hljs-attribute">preload</span>=<span class="hljs-value">"auto"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"640"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"264"</span>
+  <span class="hljs-attribute">poster</span>=<span class="hljs-value">"http://video-js.zencoder.com/oceans-clip.png"</span>
+  <span class="hljs-attribute">data-setup</span>=<span class="hljs-value">'{"example_option":true}'</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<h2 id="alternative-setup-for-dynamically-loaded-html">Alternative Setup for Dynamically Loaded HTML</h2>
+<p>If your web page or application loads the video tag dynamically (ajax, appendChild, etc.), so that it may not exist when the page loads, you&#39;ll want to manually set up the player instead of relying on the data-setup attribute. To do this, first remove the data-setup attribute from the tag so there&#39;s no confusion around when the player is initialized. Next, run the following javascript some time after the Video.js javascript library has loaded, and after the video tag has been loaded into the DOM.</p>
+<pre><code class="lang-js">videojs(<span class="hljs-string">"example_video_1"</span>, {}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  <span class="hljs-comment">// Player (this) is initialized and ready.</span>
+});
+</code></pre>
+<p>The first argument in the <code>videojs</code> function is the ID of your video tag. Replace it with your own.</p>
+<p>The second argument is an options object. It allows you to set additional options like you can with the data-setup attribute.</p>
+<p>The third argument is a &#39;ready&#39; callback. Once Video.js has initialized it will call this function.</p>
+<p>Instead of using an element ID, you can also pass a reference to the element itself.</p>
+<pre><code class="lang-js">videojs(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'example_video_1'</span>), {}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// This is functionally the same as the previous example.</span>
+});
+</code></pre>
+<pre><code class="lang-js">videojs(<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">'awesome_video_class'</span>)[<span class="hljs-number">0</span>], {}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// You can grab an element by class if you'd like, just make sure</span>
+  <span class="hljs-comment">// if it's an array that you pick one (here we chose the first).</span>
+});
+</code></pre>
+<p>* If you have trouble playing back content you know is in the <a href="http://blog.zencoder.com/2013/09/13/what-formats-do-i-need-for-html5-video/">correct format</a>, your HTTP server might not be delivering the content with the correct <a href="http://en.wikipedia.org/wiki/Internet_media_type#Type_video">MIME type</a>. Please double check your content&#39;s headers before opening an <a href="https://github.com/videojs/video.js/blob/master/CONTRIBUTING.md">issue</a>.</p>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

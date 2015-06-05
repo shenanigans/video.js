@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.Component~authoring a subclass documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_271">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="../../index.html" class="breadcrumb class">Component</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">authoring a subclass</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><p>Here is an example of creating a subclass to a registered <a href="../../index.html"><code>Component</code></a>:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Get a component to subclass</span>
+<span class="hljs-keyword">var</span> VjsButton = videojs.getComponent(<span class="hljs-string">'Button'</span>);
+
+<span class="hljs-comment">// Subclass the component (see 'extends' doc for more info)</span>
+<span class="hljs-keyword">var</span> MySpecialButton = videojs.extends(VjsButton, {});
+
+<span class="hljs-comment">// Register the new component</span>
+VjsButton.registerComponent(<span class="hljs-string">'MySepcialButton'</span>, MySepcialButton);
+
+<span class="hljs-comment">// (optionally) add the new component as a default player child</span>
+myPlayer.addChild(<span class="hljs-string">'MySepcialButton'</span>);
+</code></pre>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

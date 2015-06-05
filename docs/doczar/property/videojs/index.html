@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../highlight.css" />
+    <script type="text/javascript" src="../../index.js"></script>
+</head>
+<body class="module" id="component_699">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../index.html">module</a>
+            <span>
+                <a class="valtype" href="../../property/Function/index.html">Function</a>
+                
+                <span class="valsep">|</span>
+            </span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="index.html" class="breadcrumb module">videojs</a>
+            </span>
+        </div>
+<div id="TOC">
+    <!--<h3>Table of Contents</h3>-->
+            <div class="section">
+                <h4 class="header"><a href="#arguments">Arguments</a></h4>
+                    <a href="#component_688">id</a><br />
+                    <a href="#component_691">options</a><br />
+                    <a href="#component_694">ready</a><br />
+            </div>
+        <div class="section">
+            <h4 class="header"><a href="#statics">Static Properties</a></h4>
+                <a href="#component_597">Component</a><br />
+                <a href="#component_685">Player</a><br />
+                <a href="#component_182">VERSION</a><br />
+        </div>
+        <div class="section">
+            <h4 class="header"><a href="#functions">Static Functions</a></h4>
+                <a href="#component_270">addLanguage</a><br />
+                <a href="#component_236">extends</a><br />
+                <a href="#component_212">getComponent</a><br />
+                <a href="#component_188">getGlobalOptions</a><br />
+                <a href="#component_203">getPlayers</a><br />
+                <a href="#component_248">mergeOptions</a><br />
+                <a href="#component_258">plugin</a><br />
+                <a href="#component_224">registerComponent</a><br />
+                <a href="#component_197">setGlobalOptions</a><br />
+        </div>
+</div>
+        <div id="content">
+                <h1 class="signature">
+                        <span>
+                            <span class="valsep">,</span>
+                            <span class="types">
+                                <span class="valsep punctuation">|</span>
+                                <a class="valtype" href="property/Player/index.html">videojs.Player</a>
+                            </span>
+                        </span>
+                    videojs (
+<div class="argument">
+    
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            
+        </span>
+        <a class="title" href="#component_688">
+            id
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+<div class="argument">
+    <span class="optionBracket">[</span>
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="title" href="#component_691">
+            options
+        </a>
+    <span class="optionBracket">]</span>
+    <span class="comma">,</span>
+</div>
+<div class="argument">
+    <span class="optionBracket">[</span>
+    
+        <span>
+            <span class="valsep punctuation">|</span>
+            <a class="valtype" href="../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="title" href="#component_694">
+            ready
+        </a>
+    <span class="optionBracket">]</span>
+    <span class="comma">,</span>
+</div>
+                    ) {
+                </h1>
+            <!-- basic document info -->
+            <div id="details">
+                        <div class="markdown"><p>The <code>videojs</code> function can be used to initialize or retrieve a <a href="property/Player/index.html"><code>Player</code></a>.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myPlayer = videojs (<span class="hljs-string">'my_video_id'</span>);
+</code></pre>
+</div>
+                <div class="clear"></div>
+                    <!-- extra document info -->
+                    <h1>Additional Documentation Pages</h1>
+                    <div id="spares" class="section spares">
+                            <a class="spare" id="component_179" href="spare/README.md/index.html">README.md</a>
+                            <br />
+                    </div>
+            </div>
+<div class="children">
+            <h2>Arguments</h2>
+            <div class="section arguments">
+                    <div class="child argument" id="component_688">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            
+        </span>
+        <a class="name" href="index.html#component_688">
+            id
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Video <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a> or video <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a> ID.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument" id="component_691">
+<span class="signature">
+    
+        <div class="flag optional">optional</div>
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="index.html#component_691">
+            options
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Options Object for configuration and plugin activation.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument" id="component_694">
+<span class="signature">
+    
+        <div class="flag optional">optional</div>
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="name" href="index.html#component_694">
+            ready
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Immediately <a href="property/Component/member/ready/index.html"><code>bind a listener</code></a> to the new <a href="property/Player/index.html"><code>Player</code></a>.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+            <!-- return values -->
+            <h1 class="header">Return Values</h1>
+            <div id="returns" class="section returns">
+<div id="component_697" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="property/Player/index.html">videojs.Player</a>
+            
+        </span>
+        
+        <a class="title" href="index.html#component_697"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The selected <a href="property/Player/index.html"><code>Player</code></a>, or a newly initialized one.</p>
+</span>
+    </div>
+</div>
+            </div>
+        <!-- static properties -->
+        <h1 id="statics" class="header">Static Properties</h1>
+        <div class="section properties">
+<div id="component_597" class="child class">
+    <span class="signature">
+        <span></span>
+        
+            <span class="ctype">class</span>
+        
+        <a class="title" href="property/Component/index.html">Component</a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Base UI Component class.</p>
+<p>Components are embeddable UI objects that are represented by both a
+JavaScript object and an element in the DOM. They can be children of other
+components, and can have many children themselves.</p>
+<p>To add a button to the player:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> button = player.addChild(<span class="hljs-string">'button'</span>);
+button.el(); <span class="hljs-comment">// -&gt; button element</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"video-js"</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"vjs-button"</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+</span>
+    </div>
+</div>
+<div id="component_685" class="child class">
+    <span class="signature">
+        <span></span>
+        
+            <span class="ctype">class</span>
+        
+        <a class="title" href="property/Player/index.html">Player</a>
+    </span>
+        <div class="source super">
+            Subclass of <a class="super" href="property/Component/index.html">videojs.Component</a>
+        </div>
+    <div class="info">
+<span class="markdown"><p>The master view for <a href="index.html"><code>videojs</code></a> and final quantum of content display and control. The <a href="index.html"><code>videojs</code></a>
+module is itself a Function that manufactures Players.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myPlayer = videojs(<span class="hljs-string">'playerID'</span>);
+</code></pre>
+<p>Players may be generated automatically from the page&#39;s html using the <code>data-setup</code> attribute. Read
+<a href="property/Player/spare/using the data-setup attribute/index.html"><code>here</code></a>.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"example_video_1"</span> <span class="hljs-attribute">data-setup</span>=<span class="hljs-value">'{}'</span> <span class="hljs-attribute">controls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"my-source.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<p>After an instance has been created it can be accessed globally using <code>Video(&#39;example_video_1&#39;)</code>.</p>
+</span>
+    </div>
+</div>
+<div id="component_182" class="child property">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        
+        <a class="title" href="index.html#component_182">VERSION</a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Current software version, in <a href="https://github.com/npm/node-semver">semver</a> format.</p>
+</span>
+    </div>
+</div>
+        </div>
+        <!-- static functions -->
+        <h1 id="functions" class="header">Static Functions</h1>
+        <div class="section properties">
+<div id="component_270" class="child function">
+    <span class="signature">
+        <a href="property/addLanguage/index.html" class="title">
+            addLanguage
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_261">
+            code
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    
+    
+        <a class="title" href="#component_264">
+            data
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>  Adding languages so that they&#39;re available to all players.</p>
+<pre><code class="lang-javascript">videojs.addLanguage(<span class="hljs-string">'es'</span>, { <span class="hljs-string">'Hello'</span>: <span class="hljs-string">'Hola'</span> });
+</code></pre>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_261">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="property/addLanguage/index.html#component_261">
+            code
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The language code or dictionary property.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_264">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Object/index.html">Object</a>
+            
+        </span>
+        <a class="name" href="property/addLanguage/index.html#component_264">
+            data
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The data values to be translated.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_236" class="child function">
+    <span class="signature">
+        <a href="property/extends/index.html" class="title">
+            extends
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_227">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    
+    
+        <a class="title" href="#component_230">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Subclass an existing class. Mimics ES6 subclassing with the <code>extends</code> keyword. For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Create a basic javascript 'class'</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Human</span> <span class="hljs-params">(name)</span></span>{
+  <span class="hljs-keyword">this</span>.name = name;
+}
+
+<span class="hljs-comment">// Create an instance method</span>
+Human.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+  alert(<span class="hljs-keyword">this</span>.name);
+};
+
+<span class="hljs-comment">// Subclass the existing class and change the name</span>
+<span class="hljs-keyword">var</span> JonesFamilyMember = videojs.extends (Human, {
+  constructor: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(name)</span> </span>{
+    Human.call (<span class="hljs-keyword">this</span>, name + <span class="hljs-string">' Jones'</span>);
+  }
+});
+
+<span class="hljs-comment">// Create an instance of the new sub class</span>
+<span class="hljs-keyword">var</span> johnJones = <span class="hljs-keyword">new</span> JonesFamilyMember (<span class="hljs-string">'John'</span>);
+myInstance.getName(); <span class="hljs-comment">// "John Jones"</span>
+</code></pre>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_227">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="name" href="property/extends/index.html#component_227">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The Class to extend.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_230">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Object/index.html">Object</a>
+            
+        </span>
+        <a class="name" href="property/extends/index.html#component_230">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>An object including instace methods for the new class. If the property <code>constructor</code> is found it
+is used as the class&#39; constructor Function.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_212" class="child function">
+    <span class="signature">
+        <a href="property/getComponent/index.html" class="title">
+            getComponent
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_206">
+            name
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Get a component class Object by name.</p>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_206">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="property/getComponent/index.html#component_206">
+            name
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The class name to retrieve.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_188" class="child function">
+    <span class="signature">
+        <a href="property/getGlobalOptions/index.html" class="title">
+            getGlobalOptions
+        </a>
+        (
+            <span></span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Get the global options object</p>
+</span>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_203" class="child function">
+    <span class="signature">
+        <a href="property/getPlayers/index.html" class="title">
+            getPlayers
+        </a>
+        (
+            <span></span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Get an object with the currently created players, keyed by player ID</p>
+</span>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_248" class="child function">
+    <span class="signature">
+        <a href="property/mergeOptions/index.html" class="title">
+            mergeOptions
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_239">
+            target
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    <span class="punctuation">...</span>
+    
+        <a class="title" href="#component_242">
+            source
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Destructively merge options Objects, recursing through plain Objects and overwriting all other
+types. For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> defaultOptions = {
+  foo: <span class="hljs-literal">true</span>,
+  bar: {
+    a: <span class="hljs-literal">true</span>,
+    b: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]
+  }
+};
+<span class="hljs-keyword">var</span> newOptions = {
+  foo: <span class="hljs-literal">false</span>,
+  bar: {
+    b: [ <span class="hljs-number">4</span> ]
+  }
+};
+videojs.mergeOptions (defaultOptions, newOptions);
+<span class="hljs-comment">// defaultOptions.foo = false;</span>
+<span class="hljs-comment">// defaultOptions.bar.a = true;</span>
+<span class="hljs-comment">// defaultOptions.bar.b = [ 4 ];</span>
+</code></pre>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_239">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="property/mergeOptions/index.html#component_239">
+            target
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The options Object which will be filled/overwritten by <code>source</code>.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_242">
+<span class="signature">
+    <span class="punctuation">...</span>
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="property/mergeOptions/index.html#component_242">
+            source
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Any number of options Objects to be merged into <code>target</code>. Merge operations are processed
+individually in forward order.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_258" class="child function">
+    <span class="signature">
+        <a href="property/plugin/index.html" class="title">
+            plugin
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_252">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    
+    
+        <a class="title" href="#component_255">
+            
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Register a Video.js <a href="property/Player/index.html"><code>Player</code></a> Plugin to be activated on new and current <a href="property/Player/index.html"><code>Player</code></a>
+instances. The plugin will only be activated when an option is found in the either <a href="property/Component/index.html#component_594"><code>Component&#39;s
+config</code></a> or the <a href="property/setGlobalOptions/index.html"><code>global config.</code></a></p>
+<p>Some simple examples:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// register a plugin that alerts when the player starts playing</span>
+videojs.plugin (<span class="hljs-string">'myPlugin'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(options)</span> </span>{
+  options = options || {};
+  <span class="hljs-keyword">var</span> alertText = options.text || <span class="hljs-string">'Player is playing!'</span>
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'play'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    alert (alertText);
+  });
+});
+
+<span class="hljs-comment">// New player with plugin options pre-configured</span>
+<span class="hljs-keyword">var</span> playerOne = videojs (<span class="hljs-string">'idOne'</span>, {
+  myPlugin: {
+    text: <span class="hljs-string">'Custom text!'</span>
+  }
+});
+
+<span class="hljs-comment">// New player with plugin options configured later</span>
+<span class="hljs-keyword">var</span> playerTwo = videojs (<span class="hljs-string">'idOne'</span>);
+playerTwo.myPlugin ({ text:<span class="hljs-string">'Custom text!'</span> });
+
+<span class="hljs-comment">// New player with a late-registered plugin</span>
+<span class="hljs-keyword">var</span> playerThree = videojs (<span class="hljs-string">'idThree'</span>, {
+  pluginTwo: {
+    text: <span class="hljs-string">'Pause text!'</span>
+  }
+});
+videojs.plugin (<span class="hljs-string">'pluginTwo'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(options)</span> </span>{
+  options = options || {};
+  <span class="hljs-keyword">var</span> alertText = options.text || <span class="hljs-string">'Player is paused!'</span>
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'pause'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    alert (alertText);
+  });
+});
+</code></pre>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_252">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="property/plugin/index.html#component_252">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The new plugin&#39;s name.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_255">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="name" href="property/plugin/index.html#component_255">
+            
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The plugin Function that will be called with the plugin&#39;s <a href="property/Component/index.html#component_594"><code>configured options</code></a>.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_224" class="child function">
+    <span class="signature">
+        <a href="property/registerComponent/index.html" class="title">
+            registerComponent
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_215">
+            name
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    
+    
+        <a class="title" href="#component_218">
+            component
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Register a component so it can referred to by name.</p>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_215">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="property/registerComponent/index.html#component_215">
+            name
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The class name of the new Component.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_218">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="../../property/Function/index.html">Function</a>
+            
+        </span>
+        <a class="name" href="property/registerComponent/index.html#component_218">
+            component
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>The component class constructor to register.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_197" class="child function">
+    <span class="signature">
+        <a href="property/setGlobalOptions/index.html" class="title">
+            setGlobalOptions
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_191">
+            newOptions
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Set options that will apply to every player. Not that this will do a <a href="property/mergeOptions/index.html"><code>deep merge</code></a> with the new options, not overwrite the entire global options Object.</p>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_191">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="property/Component/property/Options/index.html">videojs.Component.Options</a>
+            
+        </span>
+        <a class="name" href="property/setGlobalOptions/index.html#component_191">
+            newOptions
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>New configuration options to be <a href="property/mergeOptions/index.html"><code>recursively merged</code></a> into the global configuration.
+All active <a href="property/Component/index.html"><code>Components</code></a> will be updated.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+        </div>
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

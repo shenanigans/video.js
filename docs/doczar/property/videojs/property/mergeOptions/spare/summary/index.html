@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.mergeOptions~summary documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_246">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="../../index.html" class="breadcrumb property">mergeOptions</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">summary</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><p>Destructively merge options Objects, recursing through plain Objects and overwriting all other
+types. For example:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> defaultOptions = {
+  foo: <span class="hljs-literal">true</span>,
+  bar: {
+    a: <span class="hljs-literal">true</span>,
+    b: [ <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> ]
+  }
+};
+<span class="hljs-keyword">var</span> newOptions = {
+  foo: <span class="hljs-literal">false</span>,
+  bar: {
+    b: [ <span class="hljs-number">4</span> ]
+  }
+};
+videojs.mergeOptions (defaultOptions, newOptions);
+<span class="hljs-comment">// defaultOptions.foo = false;</span>
+<span class="hljs-comment">// defaultOptions.bar.a = true;</span>
+<span class="hljs-comment">// defaultOptions.bar.b = [ 4 ];</span>
+</code></pre>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

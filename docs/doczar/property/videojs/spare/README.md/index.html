@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs~README.md documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../index.js"></script>
+</head>
+<body class="spare" id="component_179">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">README.md</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><h2 id="please-note-">Please Note!</h2>
+<p>The master branch is now the development branch for 5.0 and should be considered unstable until the first 5.0 release. If you&#39;re looking for the most recent stable release, please refer to the <a href="https://github.com/videojs/video.js/tree/stable">stable branch</a>.</p>
+<p><img src="https://i.cloudup.com/C3nAUZ-l4c.png" alt="Video.js logo"></p>
+<h1 id="-video-js-html5-video-player-http-videojs-com-build-status-https-travis-ci-org-videojs-video-js-svg-branch-master-https-travis-ci-org-videojs-video-js-"><a href="http://videojs.com">Video.js - HTML5 Video Player</a>  <a href="https://travis-ci.org/videojs/video.js"><img src="https://travis-ci.org/videojs/video.js.svg?branch=master" alt="Build Status"></a></h1>
+<blockquote>
+<p>Video.js is a web video player built from the ground up for an HTML5 world. It supports HTML5 and Flash video, as well as YouTube and Vimeo (through <a href="https://github.com/videojs/video.js/wiki/Plugins">plugins</a>). It supports video playback on desktops and mobile devices. This project was started mid 2010, and the player is now used on over <del>50,000</del> 100,000 websites.</p>
+</blockquote>
+<h2 id="quick-start">Quick start</h2>
+<p>Thanks to the awesome folks over at <a href="http://www.fastly.com/">Fastly</a>, there&#39;s a free, CDN hosted version of Video.js that anyone can use. Simply add these includes to your document&#39;s
+<code>&lt;head&gt;</code>:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://vjs.zencdn.net/4.12/video-js.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://vjs.zencdn.net/4.12/video.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>Then, whenever you want to use Video.js you can simply use the <code>&lt;video&gt;</code> element as your normally would, but with an additional <code>data-setup</code> attribute containing any Video.js options. These options
+can include any Video.js option plus potential <a href="https://github.com/videojs/video.js/wiki/Plugins">plugin</a> options, just make sure they&#39;re valid JSON!</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"really-cool-video"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"video-js vjs-default-skin"</span> <span class="hljs-attribute">controls</span>
+ <span class="hljs-attribute">preload</span>=<span class="hljs-value">"auto"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"640"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"264"</span> <span class="hljs-attribute">poster</span>=<span class="hljs-value">"really-cool-video-poster.jpg"</span>
+ <span class="hljs-attribute">data-setup</span>=<span class="hljs-value">'{}'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"really-cool-video.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'video/mp4'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"really-cool-video.webm"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'video/webm'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"vjs-no-js"</span>&gt;</span>
+    To view this video please enable JavaScript, and consider upgrading to a web browser
+    that <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://videojs.com/html5-video-support/"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>supports HTML5 video<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<p>If you don&#39;t want to use auto-setup, you can leave off the <code>data-setup</code> attribute and initialize a video element manually.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> player = videojs(<span class="hljs-string">'really-cool-video'</span>, { <span class="hljs-comment">/* Options */</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Good to go!'</span>);
+
+  <span class="hljs-keyword">this</span>.play(); <span class="hljs-comment">// if you don't trust autoplay for some reason</span>
+
+  <span class="hljs-comment">// How about an event listener?</span>
+  <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'ended'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'awww...over so soon?'</span>);
+  });
+});
+</code></pre>
+<p>If you&#39;re ready to dive in, the <a href="javascript:return false;"><code>documentation</code></a> is the first place to go for more information. Generally the
+<a href="javascript:return false;"><code>player API docs</code></a> are the most pertinent.</p>
+<h2 id="contributing">Contributing</h2>
+<p>Video.js is a free and open source library, and we appreciate any help you&#39;re willing to give. Check out the <a href="javascript:return false;"><code>contributing guide</code></a>.</p>
+<h2 id="building-your-own-video-js-from-source">Building your own Video.js from source</h2>
+<p>To build your own custom version read the section on <a href="javascript:return false;"><code>contributing code</code></a> and <a href="javascript:return false;"><code>&quot;Building your own copy&quot;</code></a> in the contributing guide.</p>
+<h2 id="license">License</h2>
+<p>Video.js is licensed under the Apache License, Version 2.0. <a href="javascript:return false;"><code>View the license file</code></a></p>
+<p>Copyright 2014-2015 Brightcove, Inc.</p>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>

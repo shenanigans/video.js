@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>videojs.Component#options~details documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../highlight.css" />
+    <script type="text/javascript" src="../../../../../../../../index.js"></script>
+</head>
+<body class="spare" id="component_306">
+    <div id="outer">
+        <div id="header">
+            
+            
+            
+            
+            
+            <a class="ctype" href="../../../../../../../../index.html">spare</a>
+            <span></span>
+            <span class="breadcrumbs">
+                <span class="delimiter">.</span><a href="../../../../../../index.html" class="breadcrumb module">videojs</a><span class="delimiter">.</span><a href="../../../../index.html" class="breadcrumb class">Component</a><span class="delimiter">#</span><a href="../../index.html" class="breadcrumb member">options</a><span class="delimiter">~</span><a href="index.html" class="breadcrumb spare">details</a>
+            </span>
+        </div>
+        <div id="content">
+            <!-- basic document info -->
+            <div id="details">
+                    <div class="markdown"><p>Deep merge of options objects. Whenever a property is an object on
+both options objects, the two properties will be merged using
+mergeOptions. This is used for merging options for child
+components. We want it to be easy to override individual options
+on a child component without having to rewrite all the other
+default options.</p>
+<pre><code class="lang-javascript">Parent.prototype.options_ = {
+  children: {
+    <span class="hljs-string">'childOne'</span>: { <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>, <span class="hljs-string">'asdf'</span>: <span class="hljs-string">'fdsa'</span> },
+    <span class="hljs-string">'childTwo'</span>: {},
+    <span class="hljs-string">'childThree'</span>: {}
+  }
+}
+newOptions = {
+  children: {
+    <span class="hljs-string">'childOne'</span>: { <span class="hljs-string">'foo'</span>: <span class="hljs-string">'baz'</span>, <span class="hljs-string">'abc'</span>: <span class="hljs-string">'123'</span> }
+    <span class="hljs-string">'childTwo'</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-string">'childFour'</span>: {}
+  }
+}
+result = <span class="hljs-keyword">this</span>.options(newOptions);
+<span class="hljs-comment">// result</span>
+{
+  children: {
+    <span class="hljs-string">'childOne'</span>: { <span class="hljs-string">'foo'</span>: <span class="hljs-string">'baz'</span>, <span class="hljs-string">'asdf'</span>: <span class="hljs-string">'fdsa'</span>, <span class="hljs-string">'abc'</span>: <span class="hljs-string">'123'</span> },
+    <span class="hljs-string">'childTwo'</span>: <span class="hljs-literal">null</span>, <span class="hljs-comment">// Disabled. Won't be initialized.</span>
+    <span class="hljs-string">'childThree'</span>: {},
+    <span class="hljs-string">'childFour'</span>: {}
+  }
+}
+</code></pre>
+</div>
+                <div class="clear"></div>
+            </div>
+<div class="children">
+</div>
+        </div>
+    </div>
+    <div id="footer">
+        This document was generated with
+        <a href="https://github.com/shenanigans/node-doczar">doczar</a>
+        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+    </div>
+</body>
+</html>
