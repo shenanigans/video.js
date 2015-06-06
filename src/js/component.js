@@ -698,13 +698,15 @@ class Component {
 
   /** @member/Function trigger
     Trigger an event on an element.
-  @param  {String|Event|Object} event
+  @argument/String|Event|Object event
     A string event type, an Event Object, or any Object with a [String]() property `type`.
+  @argument/Object info
+    An options document that will be passed as the emitted event's first argument.
   @returns/.
     Self.
   */
   trigger(event) {
-    Events.trigger(this.el_, event);
+    Events.trigger(this.el_, event, hash);
     return this;
   }
 

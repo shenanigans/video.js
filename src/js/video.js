@@ -106,7 +106,7 @@ setup.autoSetupTimeout(1, videojs);
 /** @property/String VERSION
   Current software version, in [semver](https://github.com/npm/node-semver) format.
 */
-videojs['VERSION'] = '__VERSION__';
+videojs.VERSION = '__VERSION__';
 
 /** @property/Function getGlobalOptions
   Get the global options object
@@ -127,15 +127,6 @@ videojs.getGlobalOptions = () => globalOptions;
 videojs.setGlobalOptions = function(newOptions) {
   return mergeOptions(globalOptions, newOptions);
 };
-
-// Set CDN Version of swf
-const MINOR_VERSION = '__VERSION_NO_PATCH__';
-const ACCESS_PROTOCOL = ('https:' === document.location.protocol ? 'https://' : 'http://');
-
-// The added (+) blocks the replace from changing this _VERSION_NO_PATCH_ string
-if (MINOR_VERSION !== '__VERSION_'+'NO_PATCH__') {
-  globalOptions['flash']['swf'] = `${ACCESS_PROTOCOL}vjs.zencdn.net/${MINOR_VERSION}/video-js.swf`;
-}
 
 /** @property/Function getPlayers
   Get an object with the currently created players, keyed by player ID
