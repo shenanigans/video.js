@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../../../highlight.css" />
     <script type="text/javascript" src="../../../../../../index.js"></script>
 </head>
-<body class="spare" id="component_598">
+<body class="spare" id="component_604">
     <div id="outer">
         <div id="header">
             
@@ -26,18 +26,15 @@
                     <div class="markdown"><h1 id="setup">Setup</h1>
 <p>Video.js is pretty easy to set up. It can take a matter of seconds to get the player up and working on your web page.</p>
 <h2 id="step-1-include-the-video-js-javascript-and-css-files-in-the-head-of-your-page-">Step 1: Include the Video.js Javascript and CSS files in the head of your page.</h2>
-<p>You can download the Video.js source and host it on your own servers, or use the free CDN hosted version. It&#39;s often recommended now to put JavaScript before the end body tag (&lt;/body&gt;) instead of the head (&lt;head&gt;), but Video.js includes an &#39;HTML5 Shiv&#39;, which needs to be in the head for older IE versions to respect the video tag as a valid element.</p>
-<blockquote>
-<p>NOTE: If you&#39;re already using an HTML5 shiv like <a href="http://modernizr.com/">Modernizr</a> you can include the Video.js JavaScript anywhere, however make sure your version of Modernizr includes the shiv for video.</p>
-<p>If you&#39;re not using something like Modernizr but still want to include Video.JS before the closing body tag, you can add your own shiv. Include this in the head of your document:</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
-  <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'video'</span>);<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'audio'</span>);<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'track'</span>);
-</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<p>You can download the Video.js source and host it on your own servers, or use the free CDN hosted version. As of Video.js 5.0, the source is <a href="http://babeljs.io/">transpiled from ES2015</a> (formerly known as ES6) to <a href="https://es5.github.io/">ES5</a>, but IE8 only supports ES3. In order to continue to support IE8, we&#39;ve bundled an <a href="https://github.com/es-shims/es5-shim">ES5 shim and sham</a> together and hosted it on the CDN.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
-</blockquote>
 <h3 id="cdn-version">CDN Version</h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//vjs.zencdn.net/4.12/video-js.min.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//vjs.zencdn.net/4.12/video.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>We include a stripped down Google Analytics pixel that tracks a random percentage (currently 1%) of players loaded from the CDN. This allows us to see (roughly) what browsers are in use in the wild, along with other useful metrics such as OS and device. If you&#39;d like to disable analytics, you can simply include the following global <strong>before</strong> including Video.js:</p>
+<pre><code class="lang-js"><span class="hljs-built_in">window</span>.HELP_IMPROVE_VIDEOJS = <span class="hljs-literal">false</span>;
 </code></pre>
 <h2 id="install-via-package-manager">Install via package manager</h2>
 <h3 id="npm">NPM</h3>
@@ -119,7 +116,7 @@ should Just Work™, but the paths can easily be changed by editing the LESS fil
     <div id="footer">
         This document was generated with
         <a href="https://github.com/shenanigans/node-doczar">doczar</a>
-        at <span class="time">3:36am</span> on <span class="date">6/5/2015</span>
+        at <span class="time">4:25am</span> on <span class="date">6/6/2015</span>
     </div>
 </body>
 </html>
