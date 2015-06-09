@@ -157,7 +157,7 @@ class Player extends Component {
     // May be turned back on by HTML5 tech if nativeControlsForTouch is true
     tag.controls = false;
 
-    /** @member/Boolean srubbing_
+    /** @member/Boolean scrubbing_
       @private
       Whether the user is scrubbing video right now.
     */
