@@ -561,7 +561,7 @@ class Component {
     The event type.
   @argument/Function listener
     The event listener.
-  @returns/videojs.Component
+  @returns/.
     Self.
   */
   on(first, second, third) {
@@ -867,7 +867,7 @@ class Component {
     return this.dimension('height', num, skipListeners);
   }
 
-  /** @member/Function dimension
+  /** @member/Function dimensions
     Set both width and height at the same time. A `resize` event will be emitted once, after both
     dimensions have changed.
   @argument/Number|String width
