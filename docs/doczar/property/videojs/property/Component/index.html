@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../highlight.css" />
     <script type="text/javascript" src="../../../../index.js"></script>
 </head>
-<body class="class" id="component_603">
+<body class="class" id="component_606">
     <div id="outer">
         <div id="header">
             
@@ -24,7 +24,7 @@
     <!--<h3>Table of Contents</h3>-->
         <div class="section">
             <h4 class="header"><a href="#events">Events</a></h4>
-                <a href="#component_596">ready</a><br />
+                <a href="#component_599">ready</a><br />
         </div>
         <div class="section">
             <h4 class="header"><a href="#statics">Static Properties</a></h4>
@@ -41,15 +41,16 @@
                 <a href="#component_463">addClass</a><br />
                 <a href="#component_388">buildCSSClass</a><br />
                 <a href="#component_349">children</a><br />
-                <a href="#component_593">clearInterval</a><br />
-                <a href="#component_572">clearTimeout</a><br />
+                <a href="#component_596">clearInterval</a><br />
+                <a href="#component_575">clearTimeout</a><br />
                 <a href="#component_331">contentEl</a><br />
                 <a href="#component_325">createEl</a><br />
-                <a href="#component_545">dimension</a><br />
+                <a href="#component_548">dimension</a><br />
+                <a href="#component_532">dimensions</a><br />
                 <a href="#component_292">dispose</a><br />
                 <a href="#component_313">el</a><br />
-                <a href="#component_548">emitTapEvents</a><br />
-                <a href="#component_551">enableTouchActivity</a><br />
+                <a href="#component_551">emitTapEvents</a><br />
+                <a href="#component_554">enableTouchActivity</a><br />
                 <a href="#component_361">getChild</a><br />
                 <a href="#component_355">getChildById</a><br />
                 <a href="#component_454">hasClass</a><br />
@@ -66,8 +67,8 @@
                 <a href="#component_439">ready</a><br />
                 <a href="#component_379">removeChild</a><br />
                 <a href="#component_472">removeClass</a><br />
-                <a href="#component_584">setInterval</a><br />
-                <a href="#component_563">setTimeout</a><br />
+                <a href="#component_587">setInterval</a><br />
+                <a href="#component_566">setTimeout</a><br />
                 <a href="#component_478">show</a><br />
                 <a href="#component_430">trigger</a><br />
                 <a href="#component_445">triggerReady</a><br />
@@ -111,7 +112,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
             <a class="valtype" href="../../../../property/Object/index.html">Object</a>
             
         </span>
-        <a class="title" href="#component_599">
+        <a class="title" href="#component_602">
             player
         </a>
     
@@ -125,7 +126,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
             <a class="valtype" href="property/Options/index.html">videojs.Component.Options</a>
             
         </span>
-        <a class="title" href="#component_600">
+        <a class="title" href="#component_603">
             options
         </a>
     <span class="optionBracket">]</span>
@@ -136,7 +137,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
                         <div class="markdown"></div>
                             <h3>Arguments</h3>
                             <div class="section arguments">
-                                    <div class="child argument" id="component_599">
+                                    <div class="child argument" id="component_602">
 <span class="signature">
     
     
@@ -145,7 +146,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
             <a class="valtype" href="../../../../property/Object/index.html">Object</a>
             
         </span>
-        <a class="name" href="index.html#component_599">
+        <a class="name" href="index.html#component_602">
             player
         </a>
     
@@ -155,7 +156,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
 </span>
                                         <div class="tail"></div></div>
                                     </div>
-                                    <div class="child argument" id="component_600">
+                                    <div class="child argument" id="component_603">
 <span class="signature">
     
         <div class="flag optional">optional</div>
@@ -165,7 +166,7 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
             <a class="valtype" href="property/Options/index.html">videojs.Component.Options</a>
             
         </span>
-        <a class="name" href="index.html#component_600">
+        <a class="name" href="index.html#component_603">
             options
         </a>
     
@@ -181,11 +182,11 @@ button.el(); <span class="hljs-comment">// -&gt; button element</span>
         <!-- events -->
         <h1 id="events" class="header">Events</h1>
         <div class="section members">
-<div id="component_596" class="child event">
+<div id="component_599" class="child event">
     <span class="signature">
         <span></span>
         
-        <a class="title" href="index.html#component_596">ready</a>
+        <a class="title" href="index.html#component_599">ready</a>
     </span>
     <div class="info">
         <span class="markdown"><p>Triggered when the Component is ready for use in the DOM. The <a href="member/ready/index.html"><code>ready queue</code></a> is executed
@@ -252,6 +253,13 @@ processed directly by the base class and should work consistent across all subcl
         <div class="section members">
 <div id="component_373" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="javascript:return false;">Component</a>
+            </span>
+        </span>
         <a href="member/addChild/index.html" class="title">
             addChild
         </a>
@@ -345,11 +353,38 @@ myComponent.children();
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_370" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="javascript:return false;">Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/addChild/index.html#component_370"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The child component, created by this process if a String was used.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_463" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/addClass/index.html" class="title">
             addClass
         </a>
@@ -392,11 +427,38 @@ myComponent.children();
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_460" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/addClass/index.html#component_460"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_388" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            </span>
+        </span>
         <a href="member/buildCSSClass/index.html" class="title">
             buildCSSClass
         </a>
@@ -408,11 +470,44 @@ myComponent.children();
         <span class="markdown"><p>A method specifically for overriding. Allows subclasses to stack CSS class names. The base class
 returns an empty String.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_385" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        
+        <a class="title" href="member/buildCSSClass/index.html#component_385"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The constructed class name.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_349" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="../../../../property/Array/index.html">Array</a>
+                    <span class="punctuation">[</span>
+                    <span>
+                        <a class="valtype" href="index.html">videojs.Component</a>
+                        <span class="valsep">,</span>
+                    </span>
+                    <span class="punctuation">]</span>
+            </span>
+        </span>
         <a href="member/children/index.html" class="title">
             children
         </a>
@@ -423,11 +518,44 @@ returns an empty String.</p>
     <div class="info">
         <span class="markdown"><p>Get an array of all child components. <code>var kids = myComponent.children();</code></p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_346" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="../../../../property/Array/index.html">Array</a>
+            
+                [
+                <span>
+                    <a class="valtype" href="index.html">videojs.Component</a>
+                    <span class="valsep">,</span>
+                </span>
+                ]
+        </span>
+        
+        <a class="title" href="member/children/index.html#component_346"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The children.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_593" class="child function">
+<div id="component_596" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/clearInterval/index.html" class="title">
             clearInterval
         </a>
@@ -436,7 +564,7 @@ returns an empty String.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_587">
+        <a class="title" href="#component_590">
             timeoutId
         </a>
     
@@ -450,7 +578,7 @@ returns an empty String.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
-                    <div class="child argument " id="component_587">
+                    <div class="child argument " id="component_590">
 <span class="signature">
     
     
@@ -459,7 +587,7 @@ returns an empty String.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
             
         </span>
-        <a class="name" href="member/clearInterval/index.html#component_587">
+        <a class="name" href="member/clearInterval/index.html#component_590">
             timeoutId
         </a>
     
@@ -470,11 +598,38 @@ returns an empty String.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_593" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/clearInterval/index.html#component_593"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The interval ID.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_572" class="child function">
+<div id="component_575" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/clearTimeout/index.html" class="title">
             clearTimeout
         </a>
@@ -483,7 +638,7 @@ returns an empty String.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_566">
+        <a class="title" href="#component_569">
             timeoutId
         </a>
     
@@ -497,7 +652,7 @@ returns an empty String.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
-                    <div class="child argument " id="component_566">
+                    <div class="child argument " id="component_569">
 <span class="signature">
     
     
@@ -506,7 +661,7 @@ returns an empty String.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
             
         </span>
-        <a class="name" href="member/clearTimeout/index.html#component_566">
+        <a class="name" href="member/clearTimeout/index.html#component_569">
             timeoutId
         </a>
     
@@ -517,11 +672,38 @@ returns an empty String.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_572" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/clearTimeout/index.html#component_572"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The timeout ID.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_331" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            </span>
+        </span>
         <a href="member/contentEl/index.html" class="title">
             contentEl
         </a>
@@ -533,11 +715,37 @@ returns an empty String.</p>
         <span class="markdown"><p>Return the component&#39;s DOM element where children are inserted.
 Will either be the same as el() or a new element defined in createEl().</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_328" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            
+        </span>
+        
+        <a class="title" href="member/contentEl/index.html#component_328"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_325" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            </span>
+        </span>
         <a href="member/createEl/index.html" class="title">
             createEl
         </a>
@@ -611,12 +819,41 @@ Will either be the same as el() or a new element defined in createEl().</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_322" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            
+        </span>
+        
+        <a class="title" href="member/createEl/index.html#component_322"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_545" class="child function">
+<div id="component_548" class="child function">
     <span class="signature">
             <div class="flag private">private</div>
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="javascript:return false;">Component</a>
+            
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/dimension/index.html" class="title">
             dimension
         </a>
@@ -625,27 +862,7 @@ Will either be the same as el() or a new element defined in createEl().</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_524">
-            width
-        </a>
-    
-    <span class="comma">,</span>
-</div>
-            
-<div class="argument">
-    
-    
-        <a class="title" href="#component_527">
-            height
-        </a>
-    
-    <span class="comma">,</span>
-</div>
-            
-<div class="argument">
-    
-    
-        <a class="title" href="#component_530">
+        <a class="title" href="#component_536">
             dimension
         </a>
     
@@ -655,7 +872,7 @@ Will either be the same as el() or a new element defined in createEl().</p>
 <div class="argument">
     
     <span class="optionBracket">[</span>
-        <a class="title" href="#component_533">
+        <a class="title" href="#component_539">
             value
         </a>
     <span class="optionBracket">]</span>
@@ -665,7 +882,7 @@ Will either be the same as el() or a new element defined in createEl().</p>
 <div class="argument">
     
     <span class="optionBracket">[</span>
-        <a class="title" href="#component_536">
+        <a class="title" href="#component_542">
             skipListeners
         </a>
     <span class="optionBracket">]</span>
@@ -675,62 +892,12 @@ Will either be the same as el() or a new element defined in createEl().</p>
         ) {
     </span>
     <div class="info">
-        <span class="markdown"><p>Set both width and height at the same time. A <code>resize</code> event will be emitted once, after both
-dimensions have changed.</p>
-<p>Get or set the styled width or height of this Component&#39;s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a>.
+        <span class="markdown"><p>Get or set the styled width or height of this Component&#39;s <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a>.
 This is the shared code for the width() and height() methods.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
-                    <div class="child argument " id="component_524">
-<span class="signature">
-    
-    
-        <span>
-            <span class="valsep punctuation punctuation">|</span>
-            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
-            
-        
-            <span class="valsep punctuation punctuation">|</span>
-            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-            
-        </span>
-        <a class="name" href="member/dimension/index.html#component_524">
-            width
-        </a>
-    
-</span>
-                        <div class="info">
-                            <span class="markdown"><p>Set the width to a Number or String. Note that Strings are used literally and should end in <code>px</code>
-or <code>%</code>.</p>
-</span>
-                        </div>
-                    </div>
-                    <div class="child argument " id="component_527">
-<span class="signature">
-    
-    
-        <span>
-            <span class="valsep punctuation punctuation">|</span>
-            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
-            
-        
-            <span class="valsep punctuation punctuation">|</span>
-            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-            
-        </span>
-        <a class="name" href="member/dimension/index.html#component_527">
-            height
-        </a>
-    
-</span>
-                        <div class="info">
-                            <span class="markdown"><p>Set the height to a Number or String. Note that Strings are used literally and should end in
-<code>px</code> or <code>%</code>.</p>
-</span>
-                        </div>
-                    </div>
-                    <div class="child argument " id="component_530">
+                    <div class="child argument " id="component_536">
 <span class="signature">
     
     
@@ -739,7 +906,7 @@ or <code>%</code>.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
             
         </span>
-        <a class="name" href="member/dimension/index.html#component_530">
+        <a class="name" href="member/dimension/index.html#component_536">
             dimension
         </a>
     
@@ -749,7 +916,7 @@ or <code>%</code>.</p>
 </span>
                         </div>
                     </div>
-                    <div class="child argument " id="component_533">
+                    <div class="child argument " id="component_539">
 <span class="signature">
     
         <div class="flag optional">optional</div>
@@ -763,7 +930,7 @@ or <code>%</code>.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
             
         </span>
-        <a class="name" href="member/dimension/index.html#component_533">
+        <a class="name" href="member/dimension/index.html#component_539">
             value
         </a>
     
@@ -773,7 +940,7 @@ or <code>%</code>.</p>
 </span>
                         </div>
                     </div>
-                    <div class="child argument " id="component_536">
+                    <div class="child argument " id="component_542">
 <span class="signature">
     
         <div class="flag optional">optional</div>
@@ -783,7 +950,7 @@ or <code>%</code>.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
             
         </span>
-        <a class="name" href="member/dimension/index.html#component_536">
+        <a class="name" href="member/dimension/index.html#component_542">
             skipListeners
         </a>
     
@@ -794,11 +961,151 @@ or <code>%</code>.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_545" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="javascript:return false;">Component</a>
+            
+        
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/dimension/index.html#component_545"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>When setting a dimension, this Component is returned. Otherwise the value set is returned as a
+Number of pixels.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
+        <div class="tail" /></div>
+    </div>
+</div>
+<div id="component_532" class="child function">
+    <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
+        <a href="member/dimensions/index.html" class="title">
+            dimensions
+        </a>
+        (
+            <span>
+<div class="argument">
+    
+    
+        <a class="title" href="#component_523">
+            width
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            
+<div class="argument">
+    
+    
+        <a class="title" href="#component_526">
+            height
+        </a>
+    
+    <span class="comma">,</span>
+</div>
+            </span>
+        ) {
+    </span>
+    <div class="info">
+        <span class="markdown"><p>Set both width and height at the same time. A <code>resize</code> event will be emitted once, after both
+dimensions have changed.</p>
+</span>
+            <h4>Arguments</h4>
+            <div class="section arguments">
+                    <div class="child argument " id="component_523">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="member/dimensions/index.html#component_523">
+            width
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Set the width to a Number or String. Note that Strings are used literally and should end in <code>px</code>
+or <code>%</code>.</p>
+</span>
+                        </div>
+                    </div>
+                    <div class="child argument " id="component_526">
+<span class="signature">
+    
+    
+        <span>
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        
+            <span class="valsep punctuation punctuation">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        <a class="name" href="member/dimensions/index.html#component_526">
+            height
+        </a>
+    
+</span>
+                        <div class="info">
+                            <span class="markdown"><p>Set the height to a Number or String. Note that Strings are used literally and should end in
+<code>px</code> or <code>%</code>.</p>
+</span>
+                        </div>
+                    </div>
+            </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_529" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/dimensions/index.html#component_529"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_292" class="child function">
     <span class="signature">
+        <span></span>
         <a href="index.html#component_292" class="title">
             dispose
         </a>
@@ -814,6 +1121,13 @@ or <code>%</code>.</p>
 </div>
 <div id="component_313" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            </span>
+        </span>
         <a href="member/el/index.html" class="title">
             el
         </a>
@@ -824,12 +1138,32 @@ or <code>%</code>.</p>
     <div class="info">
         <span class="markdown"><p>Get the component&#39;s DOM element. <code>var domEl = myComponent.el();</code></p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_310" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a>
+            
+        </span>
+        
+        <a class="title" href="member/el/index.html#component_310"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_548" class="child function">
+<div id="component_551" class="child function">
     <span class="signature">
-        <a href="index.html#component_548" class="title">
+        <span></span>
+        <a href="index.html#component_551" class="title">
             emitTapEvents
         </a>
         (
@@ -844,9 +1178,10 @@ controls through a tap on the video.</p>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_551" class="child function">
+<div id="component_554" class="child function">
     <span class="signature">
-        <a href="index.html#component_551" class="title">
+        <span></span>
+        <a href="index.html#component_554" class="title">
             enableTouchActivity
         </a>
         (
@@ -864,6 +1199,13 @@ events can cause the video controls to immediately reappear after being manually
 </div>
 <div id="component_361" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/getChild/index.html" class="title">
             getChild
         </a>
@@ -874,11 +1216,37 @@ events can cause the video controls to immediately reappear after being manually
     <div class="info">
         <span class="markdown"><p>Returns a child component with the provided name</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_358" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/getChild/index.html#component_358"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_355" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/getChildById/index.html" class="title">
             getChildById
         </a>
@@ -889,11 +1257,37 @@ events can cause the video controls to immediately reappear after being manually
     <div class="info">
         <span class="markdown"><p>Returns a child component with the provided ID.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_352" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/getChildById/index.html#component_352"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_454" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            </span>
+        </span>
         <a href="member/hasClass/index.html" class="title">
             hasClass
         </a>
@@ -936,11 +1330,40 @@ events can cause the video controls to immediately reappear after being manually
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_451" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+            
+        </span>
+        
+        <a class="title" href="member/hasClass/index.html#component_451"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_520" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/height/index.html" class="title">
             height
         </a>
@@ -1019,11 +1442,43 @@ events can cause the video controls to immediately reappear after being manually
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_517" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/height/index.html#component_517"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>When setting the height argument, this Component is returned. Otherwise the current height is
+returned as a Number of pixels.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_484" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/hide/index.html" class="title">
             hide
         </a>
@@ -1034,11 +1489,38 @@ events can cause the video controls to immediately reappear after being manually
     <div class="info">
         <span class="markdown"><p>Hide the component element if currently showing</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_481" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/hide/index.html#component_481"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_337" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            </span>
+        </span>
         <a href="member/id/index.html" class="title">
             id
         </a>
@@ -1049,11 +1531,31 @@ events can cause the video controls to immediately reappear after being manually
     <div class="info">
         <span class="markdown"><p>Get the component&#39;s ID. <code>var id = myComponent.id();</code></p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_334" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        
+        <a class="title" href="member/id/index.html#component_334"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_382" class="child function">
     <span class="signature">
+        <span></span>
         <a href="index.html#component_382" class="title">
             initChildren
         </a>
@@ -1097,6 +1599,13 @@ child options objects (that also include a &#39;name&#39; key).</p>
 </div>
 <div id="component_490" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/lockShowing/index.html" class="title">
             lockShowing
         </a>
@@ -1107,11 +1616,38 @@ child options objects (that also include a &#39;name&#39; key).</p>
     <div class="info">
         <span class="markdown"><p>Lock an item in its visible state. To be used with fadeIn/fadeOut.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_487" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/lockShowing/index.html#component_487"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_343" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            </span>
+        </span>
         <a href="member/name/index.html" class="title">
             name
         </a>
@@ -1123,11 +1659,37 @@ child options objects (that also include a &#39;name&#39; key).</p>
         <span class="markdown"><p>Get the component&#39;s name. The name is often used to reference the component. <code>var name =
 myComponent.name();</code></p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_340" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+            
+        </span>
+        
+        <a class="title" href="member/name/index.html#component_340"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_403" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/on/index.html" class="title">
             on
         </a>
@@ -1238,11 +1800,38 @@ listener and cleans it up if <a href="index.html#component_292"><code>dispose</c
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_400" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/on/index.html#component_400"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_418" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/one/index.html" class="title">
             one
         </a>
@@ -1352,11 +1941,38 @@ the listener and cleans it up if <a href="index.html#component_292"><code>dispos
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_415" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/one/index.html#component_415"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_307" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="../../../../property/Object/index.html">Object</a>
+            </span>
+        </span>
         <a href="member/options/index.html" class="title">
             options
         </a>
@@ -1429,12 +2045,39 @@ result = <span class="hljs-keyword">this</span>.options(newOptions);
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_304" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="../../../../property/Object/index.html">Object</a>
+            
+        </span>
+        
+        <a class="title" href="member/options/index.html#component_304"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>A NEW object of this.options_ and obj merged</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_298" class="child function">
     <span class="signature">
             <div class="flag private">private</div>
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="../../property/Player/index.html">videojs.Player</a>
+            </span>
+        </span>
         <a href="member/player/index.html" class="title">
             player
         </a>
@@ -1445,11 +2088,37 @@ result = <span class="hljs-keyword">this</span>.options(newOptions);
     <div class="info">
         <span class="markdown"><p>Return the component&#39;s <a href="../../property/Player/index.html"><code>Player</code></a>.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_295" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="../../property/Player/index.html">videojs.Player</a>
+            
+        </span>
+        
+        <a class="title" href="member/player/index.html#component_295"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_439" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/ready/index.html" class="title">
             ready
         </a>
@@ -1469,7 +2138,7 @@ result = <span class="hljs-keyword">this</span>.options(newOptions);
     </span>
     <div class="info">
         <span class="markdown"><p>Bind a listener to the component&#39;s ready state. Unlike with the <a href="member/on/index.html"><code>on method</code></a>, the listener
-is called (asynchronously) if the <a href="index.html#component_596"><code>ready event</code></a> has already happened.</p>
+is called (asynchronously) if the <a href="index.html#component_599"><code>ready event</code></a> has already happened.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
@@ -1493,11 +2162,31 @@ is called (asynchronously) if the <a href="index.html#component_596"><code>ready
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_436" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/ready/index.html#component_436"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_379" class="child function">
     <span class="signature">
+        <span></span>
         <a href="member/removeChild/index.html" class="title">
             removeChild
         </a>
@@ -1546,6 +2235,13 @@ child component&#39;s element from this component&#39;s element.</p>
 </div>
 <div id="component_472" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/removeClass/index.html" class="title">
             removeClass
         </a>
@@ -1588,11 +2284,38 @@ child component&#39;s element from this component&#39;s element.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_469" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/removeClass/index.html#component_469"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_584" class="child function">
+<div id="component_587" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/setInterval/index.html" class="title">
             setInterval
         </a>
@@ -1601,7 +2324,7 @@ child component&#39;s element from this component&#39;s element.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_575">
+        <a class="title" href="#component_578">
             fn
         </a>
     
@@ -1611,7 +2334,7 @@ child component&#39;s element from this component&#39;s element.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_578">
+        <a class="title" href="#component_581">
             interval
         </a>
     
@@ -1625,7 +2348,7 @@ child component&#39;s element from this component&#39;s element.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
-                    <div class="child argument " id="component_575">
+                    <div class="child argument " id="component_578">
 <span class="signature">
     
     
@@ -1634,7 +2357,7 @@ child component&#39;s element from this component&#39;s element.</p>
             <a class="valtype" href="../../../../property/Function/index.html">Function</a>
             
         </span>
-        <a class="name" href="member/setInterval/index.html#component_575">
+        <a class="name" href="member/setInterval/index.html#component_578">
             fn
         </a>
     
@@ -1644,7 +2367,7 @@ child component&#39;s element from this component&#39;s element.</p>
 </span>
                         </div>
                     </div>
-                    <div class="child argument " id="component_578">
+                    <div class="child argument " id="component_581">
 <span class="signature">
     
     
@@ -1653,7 +2376,7 @@ child component&#39;s element from this component&#39;s element.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
             
         </span>
-        <a class="name" href="member/setInterval/index.html#component_578">
+        <a class="name" href="member/setInterval/index.html#component_581">
             interval
         </a>
     
@@ -1664,11 +2387,38 @@ child component&#39;s element from this component&#39;s element.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_584" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/setInterval/index.html#component_584"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The interval ID. Used with <a href="member/clearInterval/index.html"><code>clearTimeout</code></a> to cancel the interval.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
-<div id="component_563" class="child function">
+<div id="component_566" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/setTimeout/index.html" class="title">
             setTimeout
         </a>
@@ -1677,7 +2427,7 @@ child component&#39;s element from this component&#39;s element.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_554">
+        <a class="title" href="#component_557">
             fn
         </a>
     
@@ -1687,7 +2437,7 @@ child component&#39;s element from this component&#39;s element.</p>
 <div class="argument">
     
     
-        <a class="title" href="#component_557">
+        <a class="title" href="#component_560">
             timeout
         </a>
     
@@ -1701,7 +2451,7 @@ child component&#39;s element from this component&#39;s element.</p>
 </span>
             <h4>Arguments</h4>
             <div class="section arguments">
-                    <div class="child argument " id="component_554">
+                    <div class="child argument " id="component_557">
 <span class="signature">
     
     
@@ -1710,7 +2460,7 @@ child component&#39;s element from this component&#39;s element.</p>
             <a class="valtype" href="../../../../property/Function/index.html">Function</a>
             
         </span>
-        <a class="name" href="member/setTimeout/index.html#component_554">
+        <a class="name" href="member/setTimeout/index.html#component_557">
             fn
         </a>
     
@@ -1720,7 +2470,7 @@ child component&#39;s element from this component&#39;s element.</p>
 </span>
                         </div>
                     </div>
-                    <div class="child argument " id="component_557">
+                    <div class="child argument " id="component_560">
 <span class="signature">
     
     
@@ -1729,7 +2479,7 @@ child component&#39;s element from this component&#39;s element.</p>
             <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
             
         </span>
-        <a class="name" href="member/setTimeout/index.html#component_557">
+        <a class="name" href="member/setTimeout/index.html#component_560">
             timeout
         </a>
     
@@ -1740,11 +2490,38 @@ child component&#39;s element from this component&#39;s element.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_563" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/setTimeout/index.html#component_563"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>The timeout ID. Used with <a href="member/clearTimeout/index.html"><code>clearTimeout</code></a> to cancel the timeout.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_478" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/show/index.html" class="title">
             show
         </a>
@@ -1755,11 +2532,38 @@ child component&#39;s element from this component&#39;s element.</p>
     <div class="info">
         <span class="markdown"><p>Show the component element if hidden.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_475" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/show/index.html#component_475"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_430" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/trigger/index.html" class="title">
             trigger
         </a>
@@ -1839,11 +2643,38 @@ child component&#39;s element from this component&#39;s element.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_427" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/trigger/index.html#component_427"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_445" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/triggerReady/index.html" class="title">
             triggerReady
         </a>
@@ -1854,11 +2685,37 @@ child component&#39;s element from this component&#39;s element.</p>
     <div class="info">
         <span class="markdown"><p>Trigger the <a href="member/ready/index.html"><code>ready listeners.</code></a></p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_442" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/triggerReady/index.html#component_442"></a>
+    </span>
+    <div class="info">
+<span class="markdown"></span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_496" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            </span>
+        </span>
         <a href="member/unlockShowing/index.html" class="title">
             unlockShowing
         </a>
@@ -1869,11 +2726,41 @@ child component&#39;s element from this component&#39;s element.</p>
     <div class="info">
         <span class="markdown"><p>Unlock an item from its visible state. To be used with fadeIn/fadeOut.</p>
 </span>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_493" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        </span>
+        
+        <a class="title" href="member/unlockShowing/index.html#component_493"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>Self.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
 <div id="component_508" class="child function">
     <span class="signature">
+        <span>
+            <span class="valsep">,</span>
+            <span class="types">
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="index.html">videojs.Component</a>
+            
+                <span class="valsep punctuation">|</span>
+                <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            </span>
+        </span>
         <a href="member/width/index.html" class="title">
             width
         </a>
@@ -1952,6 +2839,31 @@ or <code>%</code>.</p>
                         </div>
                     </div>
             </div>
+            <h4>Returns</h4>
+            <div class="section returns">
+                <div class="return">
+<div id="component_505" class="child returns">
+    <span class="signature">
+        <span>
+            <span class="valsep">|</span>
+            <a class="valtype" href="index.html">videojs.Component</a>
+            
+        
+            <span class="valsep">|</span>
+            <a class="valtype" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+            
+        </span>
+        
+        <a class="title" href="member/width/index.html#component_505"></a>
+    </span>
+    <div class="info">
+<span class="markdown"><p>When setting the width argument, this Component is returned. Otherwise the current width is
+returned as a Number of pixels.</p>
+</span>
+    </div>
+</div>
+                </div>
+            </div>
         <div class="tail" /></div>
     </div>
 </div>
@@ -1962,7 +2874,7 @@ or <code>%</code>.</p>
     <div id="footer">
         This document was generated with
         <a href="https://github.com/shenanigans/node-doczar">doczar</a>
-        at <span class="time">4:25am</span> on <span class="date">6/6/2015</span>
+        at <span class="time">12:43pm</span> on <span class="date">6/9/2015</span>
     </div>
 </body>
 </html>
